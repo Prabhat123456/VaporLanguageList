@@ -18,7 +18,7 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     services.register(middlewares)
 
     // Database
-    let config = PostgreSQLDatabaseConfig(hostname: "localhost", port: 5432, username: "philips", database: "languagelist", password: nil, transport: .cleartext)
+    let config = PostgreSQLDatabaseConfig(hostname: "0.0.0.0", port: 35851, username: "philips", database: "languagelist", password: nil, transport: .cleartext)
     let postgres = PostgreSQLDatabase(config: config)
     var databases = DatabasesConfig()
     databases.add(database: postgres, as: .psql)
